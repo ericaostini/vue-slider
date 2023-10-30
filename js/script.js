@@ -60,10 +60,18 @@ createApp({
     },
     methods: {
         nextImg(){
-             return this.activeIndex++
+            if(this.activeIndex === this.slides.length - 1){
+                return this.activeIndex = 0
+            } else{
+                return this.activeIndex++
+            }
         },
         prevImg(){
-            return this.activeIndex--
+            if(this.activeIndex === 0){
+                return this.activeIndex = this.slides.length -1;
+            } else{
+                return this.activeIndex--
+            }
         }
     },
 }).mount("#app")
