@@ -58,8 +58,10 @@ createApp({
         }
     },
     methods: {
-        nextImage(){
-
+        selectImg(){
+            return this.slides.filter((thumb, index) =>{
+                return thumb[index] === this.activeIndex || this.activeIndex === 0
+            })
         }
         
     },
