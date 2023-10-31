@@ -55,8 +55,7 @@ createApp({
                 }
             ],
             activeIndex: 0,
-            selectImage: ""
-            
+            intervall: null
         }
     },
     methods: {
@@ -76,9 +75,16 @@ createApp({
         },
         selectImg(i){
             this.activeIndex = i;
+        },
+        startAutoPlay(){
+            this.intervall = setInterval(this.nextImg, 2000)
+        },
+        stopAutoPlay(){
+            clearInterval(this.intervall)
         }
     },
-    mounted(i) {
-        setInterval(this.nextImg, 3000)
+     mounted(i) {
+        //this.interval = setInterval(this.nextImg, 3000)
+        this.startAutoPlay();
     },
 }).mount("#app")
