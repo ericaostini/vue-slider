@@ -55,6 +55,7 @@ createApp({
                 }
             ],
             activeIndex: 0,
+            selectImage: ""
             
         }
     },
@@ -73,5 +74,11 @@ createApp({
                 return this.activeIndex--
             }
         },
+        selectImg(i){
+            this.activeIndex = i;
+        }
+    },
+    mounted() {
+        setTimeout(this.activeIndex,2000)
     },
 }).mount("#app")
