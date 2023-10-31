@@ -78,7 +78,7 @@ createApp({
             this.activeIndex = i;
         }
     },
-    mounted() {
-        setTimeout(this.activeIndex,2000)
+    mounted(i) {
+        setInterval(this.nextImg, 3000)
     },
 }).mount("#app")
